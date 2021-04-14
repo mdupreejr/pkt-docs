@@ -187,15 +187,17 @@ From here, the power output of the power multiplier of the optimal announcement 
 doubling of the announcement difficulty, making the optimal difficulty `2`.
 
 
-## FAQ for ANN Miners
+# FAQ for ANN Miners
+## Understanding AnnMiner log output
 ### What does overflow mean? 
-When the ann handler receives an announcement, it puts it into a queue, when the queue fills up it responds overflow immediately. The queue can become long, so you may receive "operation timed out" you're still being paid, when you receive "overflow" you are not being paid.
+When the AnnHandler receives an announcement, it puts it into a queue, when the queue fills up it responds overflow immediately. The queue can become long, so you may receive "operation timed out" you're still being paid, when you receive "overflow" you are not being paid.
 
-Unfortunately, you may also receive "operation timed out" because the handler is unresponsive, it's not obvious which is the reason from looking at the logs.
+Unfortunately, you may also receive "operation timed out" because the AnnHandler is unresponsive, it's not obvious which is the reason from looking at the logs.
 
 For example, what you will see in the AnnMiner Logs:
 
     1618394538 INFO annmine.rs:519 467 Ke/s   28.56Mb/s   overflow: [0, 0, 3072, 0]      uploading: [0, 0, 17632, 0]                 accept/reject: [26932/0, 0/0, 4856/0, 796/0]                    - goodrate: [100%, 100%, 61%, 100%]
+
 
 *     467 Ke/s
 467 kilo-encryptions (thousands of encryptions) per second of mining power.
