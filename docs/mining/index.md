@@ -214,4 +214,12 @@ Anns accepted/rejected by each pool, these numbers are based on the previous 10 
 *     goodrate [100%, 100%, 61%, 100%]
 Goodrate = number of anns accepted divided by number of anns produced.
 
+### Is bandwidth still used when the pool is in an overflow state? 
+
+Example log output:
+    1618395935 WARN annmine.rs:432 [371899] handler [http://ann29.pktminers.cash/submit] replied with no result [{"warn":[],"error":["overloaded"],"result":null}]
+
+You uploaded the anns (the bandwidth was utilized), the AnnHandler responded "overloaded", and discarded them.
+
+
 
